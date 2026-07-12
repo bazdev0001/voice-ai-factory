@@ -1,0 +1,6 @@
+appId: com.apex.voiceaifactory
+---
+- launchApp
+- assertVisible: "Voice AI Factory"
+- tapOn: "Sign In"
+- assertVisible: "Email"
