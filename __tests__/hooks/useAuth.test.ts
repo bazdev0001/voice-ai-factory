@@ -10,9 +10,11 @@ jest.mock('../../services/auth', () => ({
 
 describe('useAuth', () => {
   it('returns loading true initially', async () => {
+    jest.useFakeTimers();
     const { result } = await renderHook(() => useAuth());
     expect(result.current.loading).toBe(true);
     expect(result.current.user).toBeNull();
+    jest.useRealTimers();
   });
 
   it('returns null user when signed out', async () => {
